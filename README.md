@@ -83,8 +83,13 @@ Just follow these steps:
 2. Add to your .bashrc/.zshrc/etc file:
     - ```sh
         eval $(ssh-agent)
-        ssh-add /path/to/qemukey # e.g. ssh-add ~/alpine/qemukey
+        # Change `~/docker-qemu-arm/alpine/` to your actual folder
+        ssh-add ~/docker-qemu-arm/alpine/qemukey 
         export DOCKER_HOST=ssh://root@localhost:2222
+
+        # Change `~/docker-qemu-arm/alpine/` to your actual folder
+        alias stq="cd ~/docker-qemu-arm/alpine && ./startqemu.sh && cd"
+        alias sshq="cd ~/docker-qemu-arm/alpine && ./ssh2qemu.sh && cd"
         ```
 
     - **Using fish shell?** use it instead:
